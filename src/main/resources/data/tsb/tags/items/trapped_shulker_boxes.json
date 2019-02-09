@@ -1,0 +1,22 @@
+{
+	"replace": false,
+	"values": [
+		"tsb:trapped_shulker_box",
+		"tsb:trapped_white_shulker_box",
+		"tsb:trapped_orange_shulker_box",
+		"tsb:trapped_magenta_shulker_box",
+		"tsb:trapped_light_blue_shulker_box",
+		"tsb:trapped_yellow_shulker_box",
+		"tsb:trapped_lime_shulker_box",
+		"tsb:trapped_pink_shulker_box",
+		"tsb:trapped_gray_shulker_box",
+		"tsb:trapped_light_gray_shulker_box",
+		"tsb:trapped_cyan_shulker_box",
+		"tsb:trapped_purple_shulker_box",
+		"tsb:trapped_blue_shulker_box",
+		"tsb:trapped_brown_shulker_box",
+		"tsb:trapped_green_shulker_box",
+		"tsb:trapped_red_shulker_box",
+		"tsb:trapped_black_shulker_box"
+	]
+}
