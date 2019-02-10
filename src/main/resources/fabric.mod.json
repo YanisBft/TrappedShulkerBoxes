@@ -2,7 +2,7 @@
   "id": "tsb",
   "name": "Trapped Shulker Boxes",
   "description": "A 1.14 mod adding shulker boxes that are trapped",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "side": "universal",
   "initializers": [
     "com.yanis48.tsb.TSB"

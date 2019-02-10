@@ -15,7 +15,7 @@ public class TrappedShulkerBoxBlockEntity extends ShulkerBoxBlockEntity {
 	
 	@Override
 	public void onInvOpen(PlayerEntity playerEntity_1) {
-		if (!playerEntity_1.isSpectator()) {
+		if (!playerEntity_1.method_7325()) {
 			if (this.viewerCount < 0) {
 				this.viewerCount = 0;
 			}
@@ -29,7 +29,7 @@ public class TrappedShulkerBoxBlockEntity extends ShulkerBoxBlockEntity {
 	
 	@Override
 	public void onInvClose(PlayerEntity playerEntity_1) {
-		if (!playerEntity_1.isSpectator()) {
+		if (!playerEntity_1.method_7325()) {
 			--this.viewerCount;
 			this.onInvOpenOrClose();
 		}
