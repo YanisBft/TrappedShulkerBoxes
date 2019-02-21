@@ -20,8 +20,8 @@ public class TrappedShulkerBox extends ShulkerBoxBlock {
 	
 	public TrappedShulkerBox(String name, DyeColor color) {
 		super(color, FabricBlockSettings.of(Material.SHULKER_BOX).strength(0.25f, 30.0f).dynamicBounds().build());
-		Registry.BLOCK.register(new Identifier(TSB.MOD_ID, name), this);
-		Registry.ITEM.register(new Identifier(TSB.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(1).itemGroup(ItemGroup.REDSTONE)));
+		Registry.register(Registry.BLOCK, new Identifier(TSB.MOD_ID, name), this);
+		Registry.register(Registry.ITEM, new Identifier(TSB.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(1).itemGroup(ItemGroup.REDSTONE)));
 	}
 	
 	@Override
