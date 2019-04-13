@@ -15,5 +15,7 @@
 	"block.tsb.trapped_brown_shulker_box": "Trapped Brown Shulker Box",
 	"block.tsb.trapped_green_shulker_box": "Trapped Green Shulker Box",
 	"block.tsb.trapped_red_shulker_box": "Trapped Red Shulker Box",
-	"block.tsb.trapped_black_shulker_box": "Trapped Black Shulker Box"
+	"block.tsb.trapped_black_shulker_box": "Trapped Black Shulker Box",
+	
+	"stat.tsb.trigger_trapped_shulker_box": "Trapped Shulker Boxes Triggered"
 }

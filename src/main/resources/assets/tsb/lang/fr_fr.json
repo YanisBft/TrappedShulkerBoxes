@@ -15,5 +15,7 @@
 	"block.tsb.trapped_brown_shulker_box": "Boîte de Shulker marron piégée",
 	"block.tsb.trapped_green_shulker_box": "Boîte de Shulker verte piégée",
 	"block.tsb.trapped_red_shulker_box": "Boîte de Shulker rouge piégée",
-	"block.tsb.trapped_black_shulker_box": "Boîte de Shulker noire piégée"
+	"block.tsb.trapped_black_shulker_box": "Boîte de Shulker noire piégée",
+	
+	"stat.tsb.trigger_trapped_shulker_box": "Boîtes de Shulker piégées déclenchées"
 }

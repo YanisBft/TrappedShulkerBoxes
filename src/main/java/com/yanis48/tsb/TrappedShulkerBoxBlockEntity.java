@@ -22,7 +22,7 @@ public class TrappedShulkerBoxBlockEntity extends ShulkerBoxBlockEntity {
 			++this.viewerCount;
 			this.onInvOpenOrClose();
 			if (this.viewerCount == 1) {
-				this.world.playSound((PlayerEntity)null, this.pos, SoundEvents.BLOCK_SHULKER_BOX_OPEN, SoundCategory.BLOCK, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+				this.world.playSound((PlayerEntity)null, this.pos, SoundEvents.BLOCK_SHULKER_BOX_OPEN, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
 			}
 		}
 	}
@@ -34,7 +34,7 @@ public class TrappedShulkerBoxBlockEntity extends ShulkerBoxBlockEntity {
 			this.onInvOpenOrClose();
 		}
 		if (this.viewerCount <= 0) {
-			this.world.playSound((PlayerEntity)null, this.pos, SoundEvents.BLOCK_SHULKER_BOX_CLOSE, SoundCategory.BLOCK, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
+			this.world.playSound((PlayerEntity)null, this.pos, SoundEvents.BLOCK_SHULKER_BOX_CLOSE, SoundCategory.BLOCKS, 0.5F, this.world.random.nextFloat() * 0.1F + 0.9F);
 		}
 	}
 	

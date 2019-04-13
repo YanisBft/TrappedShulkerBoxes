@@ -1,11 +1,17 @@
 package com.yanis48.tsb;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.stat.StatFormatter;
+import net.minecraft.stat.Stats;
 import net.minecraft.util.DyeColor;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class TSB implements ModInitializer {
 	
 	public static final String MOD_ID = "tsb";
+	
+	public static final Identifier TRIGGER_TRAPPED_SHULKER_BOX = registerStat("trigger_trapped_shulker_box", StatFormatter.DEFAULT);
 	
 	public static TrappedShulkerBox TRAPPED_SHULKER_BOX;
 	public static TrappedShulkerBox TRAPPED_WHITE_SHULKER_BOX;
@@ -45,5 +51,12 @@ public class TSB implements ModInitializer {
 		TRAPPED_GREEN_SHULKER_BOX = new TrappedShulkerBox("trapped_green_shulker_box", DyeColor.GREEN);
 		TRAPPED_RED_SHULKER_BOX = new TrappedShulkerBox("trapped_red_shulker_box", DyeColor.RED);
 		TRAPPED_BLACK_SHULKER_BOX = new TrappedShulkerBox("trapped_black_shulker_box", DyeColor.BLACK);
+	}
+	
+	public static Identifier registerStat(String name, StatFormatter formatter) {
+		Identifier identifier = new Identifier(MOD_ID, name);
+		Registry.register(Registry.CUSTOM_STAT, (String)name, identifier);
+		Stats.CUSTOM.getOrCreateStat(identifier, formatter);
+		return identifier;
 	}
 }
