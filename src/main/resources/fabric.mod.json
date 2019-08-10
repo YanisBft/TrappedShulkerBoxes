@@ -1,25 +1,28 @@
 {
-	"schemaVersion": 1,
-	"id": "tsb",
-	"version": "1.0.3",
-	"name": "Trapped Shulker Boxes",
-	"description": "A 1.14 mod adding shulker boxes that are trapped",
-	"authors": [
-		"Yanis48"
-	],
-	"contact": {
-		"homepage": "https://minecraft.curseforge.com/projects/tsb",
-		"sources": "https://github.com/Yanis48/TrappedShulkerBoxes",
-		"issues": "https://github.com/Yanis48/TrappedShulkerBoxes/issues"
-	},
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.yanis48.tsb.TSB"
-		]
-	},
-	"requires": {
-		"fabricloader": ">=0.4.0",
-		"fabric": "*"
-	}
+    "schemaVersion": 1,
+    "id": "tsb",
+    "version": "1.0.4",
+    "name": "Trapped Shulker Boxes",
+    "description": "A mod adding shulker boxes that are trapped",
+    "authors": [
+        "Yanis48"
+    ],
+    "contact": {
+        "homepage": "https://www.curseforge.com/minecraft/mc-mods/tsb",
+        "sources": "https://github.com/Yanis48/TrappedShulkerBoxes",
+        "issues": "https://github.com/Yanis48/TrappedShulkerBoxes/issues"
+    },
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.yanis48.tsb.TSB"
+        ],
+        "client": [
+            "com.yanis48.tsb.TSBClient"
+        ]
+    },
+    "depends": {
+        "fabricloader": ">=0.4.5",
+        "fabric": "*"
+    }
 }

@@ -9,7 +9,7 @@ import net.minecraft.container.NameableContainerProvider;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.block.BlockItem;
+import net.minecraft.item.BlockItem;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
@@ -22,16 +22,18 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 public class TrappedShulkerBox extends ShulkerBoxBlock {
+	private DyeColor color;
 	
 	public TrappedShulkerBox(String name, DyeColor color) {
 		super(color, FabricBlockSettings.of(Material.SHULKER_BOX).strength(0.25f, 30.0f).dynamicBounds().build());
+		this.color = color;
 		Registry.register(Registry.BLOCK, new Identifier(TSB.MOD_ID, name), this);
-		Registry.register(Registry.ITEM, new Identifier(TSB.MOD_ID, name), new BlockItem(this, new Item.Settings().stackSize(1).itemGroup(ItemGroup.REDSTONE)));
+		Registry.register(Registry.ITEM, new Identifier(TSB.MOD_ID, name), new BlockItem(this, new Item.Settings().maxCount(1).group(ItemGroup.REDSTONE)));
 	}
 	
 	@Override
-	public BlockEntity createBlockEntity(BlockView blockView_1) {
-		return new TrappedShulkerBoxBlockEntity();
+	public BlockEntity createBlockEntity(BlockView blockView) {
+		return new TrappedShulkerBoxBlockEntity(this.color);
 	}
 	
 	@Override
@@ -48,16 +50,16 @@ public class TrappedShulkerBox extends ShulkerBoxBlock {
 		}
 	}
 	
-	public boolean emitsRedstonePower(BlockState blockState_1) {
+	public boolean emitsRedstonePower(BlockState state) {
 		return true;
 	}
 	
-	public int getWeakRedstonePower(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, Direction direction_1) {
-		return MathHelper.clamp(TrappedShulkerBoxBlockEntity.getPlayersLookingInShulkerBoxCount(blockView_1, blockPos_1), 0, 15);
+	public int getWeakRedstonePower(BlockState state, BlockView blockView, BlockPos pos, Direction direction) {
+		return MathHelper.clamp(TrappedShulkerBoxBlockEntity.getPlayersLookingInShulkerBoxCount(blockView, pos), 0, 15);
 	}
 	
-	public int getStrongRedstonePower(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, Direction direction_1) {
-		return direction_1 == Direction.UP ? blockState_1.getWeakRedstonePower(blockView_1, blockPos_1, direction_1) : 0;
+	public int getStrongRedstonePower(BlockState state, BlockView blockView, BlockPos pos, Direction direction) {
+		return direction == Direction.UP ? state.getWeakRedstonePower(blockView, pos, direction) : 0;
 	}
 
 }
